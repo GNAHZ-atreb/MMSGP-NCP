@@ -46,16 +46,6 @@ switch tp
         ct = n\(1:n)'; xt1 = exp(ct.*x); sinhx = 0.5*(xt1 - 1./xt1);
         xt2 = [0; x(1:n-1)]; xt3 = [x(2:n); 0];
         f = sinhx + xt2 + xt3 + ct;
-  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% NEW
-    case{100}
-        ct = 1./(1:n)'; xt1 = [x(2:n); 0]; xt2 = [0; x(1:n-1)];
-        f = x + atan(x) - cos(ct.*(xt1 + xt2)) - ones(n,1);
-    case{101}
-        xt1 = [0; x(1:n-1)]; xt2 = [x(2:n); 0]; h = 1/3;
-        f = x - exp(cos(h*(xt1 + x + xt2)));
-    case{102}
-        xt1 = [0; x(1:n-1)]; xt2 = [x(2:n); 0]; h = 1/3;
-        f = x - exp(cos(h*abs(xt1 + x + xt2)));   
     otherwise
-        disp( 'This input index "tp" does not exist in this test library. Please re-enter£¡' );
+        disp( 'This input index "tp" does not exist in this test library. Please re-enterÂ£Â¡' );
 end
